@@ -1,0 +1,30 @@
+﻿@model List<Company_test.dbo_connt.Emp1>
+
+<table class=" table table-bordered table-hover table-responsive">
+    <tr>
+        <th>Id</th>
+        <th>Name</th>
+        <th>Qalification</th>
+        <th>Gender</th>
+        <th>Mobile</th>
+        <th>Status</th>
+        <th>Edit</th>
+        <th>Delete</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+<tr>
+    <td>@item.Id</td>
+    <td>@item.Name</td>
+    <td>@item.Qalification</td>
+    <td>@item.Gender</td>
+    <td>@item.Mobile</td>
+    <td>@item.Status</td>
+    <td><a class=" btn btn-success" href="@Url.Action("Edit","Home", new { id=item.Id})">Edit</a></td>
+    <td><a class=" btn btn-danger" href="@Url.Action("Delete","Home", new { id=item.Id})">Delete</a></td>
+
+
+</tr>
+    }
+</table>
